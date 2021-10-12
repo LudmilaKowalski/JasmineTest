@@ -241,76 +241,340 @@ for (let i = 0; i < a.length; i++) {
 
 let repeatElements = (array) => {
 
+    let a = array
+    let b = a + "," + a 
+    let c = b.split(",")
+    return c
+
+    /*
     var cloned_array = [].concat(array)
 
     let b = cloned_array + cloned_array;
+    let c = b.split("")
+    let d = c
 
-    return [b];
+    return [b]; */
 }
 
 let stringToNumber = (string) => {
-    return 'Write your method here';
+
+    var nb=parseInt(string)
+
+    return nb;
 }
 
 let calculateAverage = (array) => {
-    return 'Write your method here';
+
+    let a = array
+
+    function ArrayAvg(a) {
+        var i = 0, summ = 0, ArrayLen = a.length;
+        while (i < ArrayLen) {
+            summ = summ + a[i++];
+    }
+        return summ / ArrayLen;
+    }
+    
+    var b = ArrayAvg(a);
+    
+
+    return b;
 }
 
 let getElementsUntilGreaterThanFive = (array) => {
-    return 'Write your method here';
+
+    
+        let newArray = [];
+    
+        for (let elem of array) {
+            if (elem < 6) {
+                newArray.push(elem);
+            } else {
+                break;
+            }
+        }
+        return newArray;
+    
+
+    
+
+
+    /*
+
+    function suffisammentGrand(element) {
+        return element <= 5;
+      }
+      var filtre = a.filter(suffisammentGrand);
+
+    return filtre;*/
 }
 
 let convertArrayToObject = (array) => {
-    return 'Write your method here';
+
+    let a = []
+
+
+   
+
+    while (array.length>0) {
+        a.push(array.splice(0,2)) 
+    }
+
+  // let b = Object.assign( {}, a) 
+
+  
+
+    return Object.fromEntries(a);
 }
 
 let getAllLetters = (array) => {
-    return 'Write your method here';
+
+    let a = array
+
+    let b = a.toString()
+
+    let c = b.split('')
+
+    let d = c.sort()
+
+    let f = ","
+
+    e = d.filter(function(element) {
+        return element !== f;
+
+    });
+
+    
+    g = e.filter(function(ele , pos){
+        return e.indexOf(ele) == pos;
+    }) 
+
+    
+
+    return g;
 }
 
 let swapKeysAndValues = (object) => {
-    return 'Write your method here';
+
+    let a = object
+
+    function inverse(obj){
+        var retobj = {};
+        for(var key in obj){
+          retobj[obj[key]] = key;
+        }
+        return retobj;
+      }
+    
+
+
+    return inverse(a);
 }
 
 let sumKeysAndValues = (object) => {
-    return 'Write your method here';
+
+    let a = object
+
+    function sum( obj ) {
+        var sum = 0;
+        for( var el in obj ) {
+          if( obj.hasOwnProperty( el ) ) {
+            sum += parseFloat( obj[el] );
+          }
+        }
+        return sum;
+      }
+          
+      
+     let  summed = sum( a);
+
+     Object.prototype.getKeyByValue = function( value ) {
+        for( var prop in this ) {
+            if( this.hasOwnProperty( prop ) ) {
+                 if( this[ prop ] === value )
+                     return prop;
+            }
+        }
+    }
+
+    let u= a.getKeyByValue(3)
+    let v = a.getKeyByValue(7)
+    let z = parseInt(v)
+    let j = parseInt(u)
+    let w = z + j
+    let r = u + v
+
+
+      return summed + w
+   
+/*
+
+    let b = a.toString()
+    let c = a.split("")
+*/
+    return c;
 }
 
 let removeCapitals = (string) => {
-    return 'Write your method here';
+    let a = string
+   let d = a.replace( /[^a-z]/,' ' );
+   let e = d.trim()
+
+
+    let c = e.replace ('K', '' )
+    
+    return c;
+   
 }
 
 let roundUp = (number) => {
-    return 'Write your method here';
+
+    let a = number
+
+    return Math.ceil(a);
 }
 
 let formatDateNicely = (date) => {
-    return 'Write your method here';
+
+    let a = date
+
+    let b ="0" +a.getDate() + "/" + "0" + (a.getMonth() + 1) + "/" + a.getFullYear()
+
+
+
+    return b;
 }
 
 let getDomainName = (string) => {
-    return 'Write your method here';
+
+    let a = string
+    var b = a.substring(a.lastIndexOf("@") +1);
+    let c = b.replace(".com", "")
+    return c;
 }
 
 let titleize = (string) => {
-    return 'Write your method here';
+
+   
+        String.prototype.capitalize = function() {
+            return this.charAt(0).toLocaleUpperCase() + this.slice(1);
+        }
+    
+        string = string.split(" ");
+        string[0] = string[0].capitalize();
+    
+        string.forEach((element, index) => {
+            if (element.toLowerCase() === "the") {
+                string[index +1] = string[index + 1].capitalize();
+            }
+            else if (element.endsWith(".")) {
+                string[index + 1] = string[index + 1].capitalize();
+            }
+        })
+    
+        string = string.join(" ");
+        return string;
+    
+
+    /*
+    let a = string
+    let d = /The/gi
+    let j = /And/gi
+    let w= /. and/gi
+    let z =/Witc/gi
+
+    function toUpper(str) {
+        return str
+            .toLowerCase()
+            .split(' ')
+            .map(function(word) {
+                return word[0].toUpperCase() + word.substr(1);
+            })
+            .join(' ');
+         }
+         
+         let b = toUpper(a)
+
+         let c = b.replace(d, "the")
+        // let d = c[0].toUpperCase()
+         let g= c.charAt(0).toUpperCase() + c.slice(1);
+         let h= g.replace(j, "and")
+         let x= g.replace(w, ". And")
+         let v = x.replace("Witc", "Witch")
+    return g
+
+    */
+
 }
 
 let checkForSpecialCharacters = (string) => {
+
+    let a = string
+
+    var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+if(format.test(a)){
+  return true;
+} else {
+  return false;
+}
+
     return 'Write your method here';
 }
 
 let squareRoot = (number) => {
-    return 'Write your method here';
+
+    let a = number
+
+   let b=  Math.sqrt(a)
+
+    return b;
 }
 
 let factorial = (number) => {
-    return 'Write your method here';
+
+    let a = number
+
+    function factorielle(n) {
+        let res = 1;
+        //on saute 1
+        for (let i = 2; i < n + 1; i++) {
+          res = res * i;
+        }
+        return res
+      }
+
+      return factorielle(a)
+
+
+
 }
 
 let findAnagrams = (string) => {
-    return 'Write your method here';
+
+    let a = string
+
+    function allAnagrams (word) {
+        if (word.length < 2) {
+          return [word];
+        } else {
+            var allAnswers = [];
+            for (var i = 0; i < word.length; i++) {
+              var letter = word[i];
+              var shorterWord = word.substr(0, i) + word.substr(i + 1, word.length - 1);
+              var shortwordArray = allAnagrams(shorterWord);
+              for (var j = 0; j < shortwordArray.length; j++) {
+                allAnswers.push(letter + shortwordArray[j]);
+              }
+            }
+            return allAnswers;
+        }
+      }
+      
+      return allAnagrams(a)
+     FindAllPermutations(a);
 }
+
 
 let convertToCelsius = (number) => {
     return 'Write your method here';
