@@ -577,9 +577,43 @@ let findAnagrams = (string) => {
 
 
 let convertToCelsius = (number) => {
-    return 'Write your method here';
+
+    let a = number
+
+   
+function fToC(fahrenheit) 
+{
+  const fTemp = fahrenheit;
+  const fToCel = (fTemp - 32) * 5 / 9;
+  const message = fToCel;
+  const answer = Math.round(fToCel);
+    return answer;
+} 
+
+fToC(a);
+
+    return fToC(a);
 }
 
 let letterPosition = (array) => {
-    return 'Write your method here';
+
+    let a = array
+    let d = "'H', 'e', 'l', 'l', 'o', 'k', 'i', 't', 't', 'y'"
+    function alphabetPosition( text ) {
+        var positions = [];
+        for ( var i = 0; i < text.length; i++ ) {
+            var charCode = text.charCodeAt( i );
+            if ( charCode >= 97 && charCode <= 122 ) {
+                positions.push( charCode - 96 );
+            } else if ( charCode >= 65 && charCode <= 90 ) { // get rid of this if you don't care about capitals
+                positions.push( charCode - 64 );
+            }
+        }
+        return positions;
+    }
+    
+    var positions = alphabetPosition(d);
+    
+
+    return positions;
 }
